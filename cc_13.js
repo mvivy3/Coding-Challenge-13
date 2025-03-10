@@ -49,3 +49,34 @@ document.querySelectorAll(".employee-card").forEach(card=>{ // selects all eleme
         event.stopPropagation();  // prevent event from bubblung up to the container
     });
 })
+
+// TASK 5: INLINE EDITING OF EMPLOYEE DETAIILS
+
+const editButton=document.createElement("button");
+editButton.textContent="Edit";
+
+editButton.addEventListener("click",function(){
+    const inputName=document.createElement("input");
+    inputName.value=heading.textContent;
+    const inputPosition=document.createElement("input");
+    inputPosition.value=paragraph.textContent;
+    const saveButton=document.createElement("button");
+    saveButton.textContent='Save';
+    card.appendChild(inputPosition);
+
+    card.appendChild(inputName);
+    card.appendChild(inputPosition);
+    card.appendChild(saveButton);
+    card.appendChild(removeButton);
+
+    saveButton.addEventListener("click",function(){
+        heading.textContent=inputName.value;
+        paragraph.textContent=inputPosition.value;
+
+        card.inner.HTML="";
+        card.appendChild(heading)
+        card.appendChild(paragraph)
+        card.appendChild(removeButton)
+        card.appendChild(editButton)
+    })
+})

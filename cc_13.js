@@ -31,3 +31,13 @@ function addEmployeeCard(name, position) { // function to create employee card
  // Test Cases
  addEmployeeCard("Edward Paisley","F1 driver");
  addEmployeeCard("Luciendo Garlawry","F1 presenter");
+
+// TASK 3: CONVERTING NODELISTS TO ARRAYS FOR BULK UPDATES
+function addBorderCards(){
+    const employeeCards = document.querySelectiorAll("employee-card"); // select all elements 
+    const employeeCardsArray = Array.from(employeeCards); // convert the NodeList into an array 
+    employeeCardsArray.forEach(Card=>{ // use an array method to update each card's style 
+        card.styleborder = `10px purple` // change the color
+    });
+};
+addBorderCards();

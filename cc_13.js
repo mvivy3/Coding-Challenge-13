@@ -41,3 +41,11 @@ function addBorderCards(){
     });
 };
 addBorderCards();
+
+// TASK 4: IMPLEMENTING REMOVAL OF EMPLOYEE CARDS WITH EVENT BUBBLING
+document.querySelectorAll(".employee-card").forEach(card=>{ // selects all elements with the employee card class
+    card.addEventListener("click",(event)=>{
+        console.log("Clicked Employee Card");
+        event.stopPropagation();  // prevent event from bubblung up to the container
+    });
+})
